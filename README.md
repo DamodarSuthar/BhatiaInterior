@@ -6,6 +6,14 @@ Built entirely using **Kotlin**, **Jetpack Compose (Material 3)**, and modern An
 
 ---
 
+## 🌐 Live Web Demo
+
+You can interactively run and preview the full Android app directly in your web browser via the high-performance streaming emulator—no setup or installation required!
+
+👉 **[Launch Interactive Web Demo](https://ais-pre-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)**
+
+---
+
 ## 🎨 Design Philosophy & Visual Styling
 
 The visual architecture is crafted to replicate the luxury and warmth of a high-end interior design studio:
