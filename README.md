@@ -8,12 +8,14 @@ Built entirely using **Kotlin**, **Jetpack Compose (Material 3)**, and modern An
 
 ## 🌐 Live Web Demo
 
-You can interactively run and preview the full Android app directly in your web browser via the high-performance streaming emulator—no setup or installation required!
+To preview and interact with the application directly in your web browser, please use the appropriate link below based on your current workspace status:
 
-*   👉 **[Launch Active Development Preview](https://ais-dev-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** (Active streaming preview during your workspace development)
-*   👉 **[Launch Shared Web App Build](https://ais-pre-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** (Published pre-release build)
+1.  👉 **[Launch Active Development Preview](https://ais-dev-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** 
+    *(Use this link to access the **live streaming emulator** directly connected to your active developer workspace container. This is active during your coding session).*
+2.  👉 **[Launch Shared Web App Build](https://ais-pre-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)**
+    *(This is the production CDN link. Note: If this link returns `Error: Page not found`, it is because you have not yet completed a **Publish / Share** action. To activate it, click the **Share** button in the top-right corner of the Google AI Studio interface to compile your production release!)*
 
-> 💡 **Tip:** You can also run the app instantly in the browser by opening the **Preview** or **Streaming Emulator** panel inside the **Google AI Studio** workspace. It provides live interactive feedback as you develop!
+> 💡 **Tip:** The easiest way to run and test the app instantly is directly inside the **Streaming Emulator / Preview** panel on the right side of your Google AI Studio workspace!
 
 ---
 
@@ -55,14 +57,56 @@ The visual architecture is crafted to replicate the luxury and warmth of a high-
 
 ---
 
-## 📸 Screen Previews
+## 📸 Screen Previews & App Layouts
 
-> [!TIP]
-> **Capture Screenshots**: Run the application in the AI Studio streaming emulator, take screen grabs of each key screen (Home, Customize, Tracker, Portfolio), place them inside an `art/` or `screenshots/` directory, and link them below to showcase your gorgeous UI!
+Due to the image generation system's daily API quota limit during automated workspace builds, pre-generated mockup graphics could not be written directly into the project repository. However, you can instantly add your own screenshots by following this quick 3-step guide!
 
-| Home Screen | Bespoke Customizer | Interactive Catalog | Client Tracker |
-| :---: | :---: | :---: | :---: |
-| _[Add Home Screenshot Here]_ | _[Add Customizer Screenshot Here]_ | _[Add Catalog Screenshot Here]_ | _[Add Tracker Screenshot Here]_ |
+### 🛠️ How to Add Your Screenshots
+1.  **Launch the App**: Open the **Active Development Preview** link or the **Streaming Emulator** panel inside the Google AI Studio workspace.
+2.  **Take Screen Grabs**: Capture a screenshot of the main screens (**Home, Browse, Customize, Tracker, Contact**).
+3.  **Place in Repository**: Create a folder named `art/` in the root of your repository, place the images inside (e.g., `home.png`, `customize.png`), and reference them in this markdown file.
+
+---
+
+### 📱 Visual Architecture & Wireframe Layouts
+
+To help you visualize the premium Material 3 UI design constructed for **Bhatia Interior**, here is the structural layout of the major screens:
+
+```
+┌──────────────────────────────────────┐  ┌──────────────────────────────────────┐
+│  BHATIA INTERIOR - PREMIUM HOME      │  │  BESPOKE CUSTOMIZER (MATERIAL 3)     │
+├──────────────────────────────────────┤  ├──────────────────────────────────────┤
+│  [Hero Banner Carousel]             │  │  [3D-Style Living Room Scene]        │
+│  "Discover Curated Spaces"           │  │  "Turnkey Wooden Fabrication"        │
+│                                      │  │                                      │
+│  [Timber Selector Swatches]          │  │  [ Timber Species Selector ]         │
+│  Teak   •   Walnut   •   Oak         │  │  (•) Burmese Teak   ( ) Walnut       │
+│                                      │  │                                      │
+│  [Architectural Design Articles]     │  │  [ Hardware / Handles Selection ]    │
+│  - Space Optimization in Mumbai      │  │  - Brass Knobs    - Matte Black Rail │
+│  - Contrast Styling & Highlights     │  │                                      │
+│                                      │  │  [Estimated Price: ₹ 1,45,000/-]     │
+│  [Quick Booking Floating Button]     │  │  [Add to Moodboard]   [Book Design]  │
+└──────────────────────────────────────┘  └──────────────────────────────────────┘
+             (Home Screen)                           (Customize Screen)
+
+┌──────────────────────────────────────┐  ┌──────────────────────────────────────┐
+│  CLIENT PORTAL & PROGRESS TRACKER    │  │  SHOWROOM LOCATOR & BOOKING          │
+├──────────────────────────────────────┤  ├──────────────────────────────────────┤
+│  [Milestone Progress Card]           │  │  [Interactive Vector Map]            │
+│  Active Project: Modular Wardrobe    │  │  "Linking Road, Bandra West, Mumbai" │
+│  Progress: 75%                       │  │                                      │
+│  ■■■■■■■■■■■■■■■■■■■■■■■■■■■□□□□□    │  │  [Designer Consultation Scheduler]   │
+│                                      │  │  - Select Preferred Service          │
+│  [Architect Chat Support Zone]       │  │  - Enter Target Booking Date         │
+│  "Send site photos / coordinate"     │  │  - Full Name / Contact Number        │
+│  [Type message...]            [Send] │  │                                      │
+│                                      │  │  [ Submit Booking Reservation ]      │
+│  [Submit Showroom Visit Review]      │  │                                      │
+│  ★ ★ ★ ★ ☆  "Write comments here..."  │  │  [Showroom Working Hours Info Card]  │
+└──────────────────────────────────────┘  └──────────────────────────────────────┘
+            (Tracker Screen)                         (Contact Screen)
+```
 
 ---
 
