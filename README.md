@@ -10,7 +10,10 @@ Built entirely using **Kotlin**, **Jetpack Compose (Material 3)**, and modern An
 
 You can interactively run and preview the full Android app directly in your web browser via the high-performance streaming emulator—no setup or installation required!
 
-👉 **[Launch Interactive Web Demo](https://ais-pre-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)**
+*   👉 **[Launch Active Development Preview](https://ais-dev-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** (Active streaming preview during your workspace development)
+*   👉 **[Launch Shared Web App Build](https://ais-pre-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** (Published pre-release build)
+
+> 💡 **Tip:** You can also run the app instantly in the browser by opening the **Preview** or **Streaming Emulator** panel inside the **Google AI Studio** workspace. It provides live interactive feedback as you develop!
 
 ---
 
