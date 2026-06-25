@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhatia Interior — Premium Showroom & Digital Demonstration Suite</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Luxury Dark Slate/Wood Theme Palette mimicking high-end woodwork */
+    .bg-heritage-dark {
+      background-color: #12100E;
+    }
+    .bg-heritage-card {
+      background-color: #1A1613;
+    }
+    .bg-heritage-accent-gold {
+      background-color: #9E845A;
+    }
+    .border-heritage-accent {
+      border-color: #8B7355;
+    }
+    .text-heritage-gold {
+      color: #D4AF37;
+    }
+    .text-heritage-bronze {
+      color: #9E845A;
+    }
+    .bg-heritage-bronze {
+      background-color: #8B7355;
+    }
+    .bg-heritage-bronze-light {
+      background-color: rgba(139, 115, 85, 0.12);
+    }
+    /* Phone frame notch detailing */
+    .phone-notch {
+      width: 140px;
+      height: 22px;
+      background: #000;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+    }
+    /* Dynamic Varnish Overlay effect */
+    .varnish-matte {
+      filter: contrast(1) brightness(1);
+    }
+    .varnish-satin {
+      filter: contrast(1.1) brightness(1.05);
+      box-shadow: inset 0 0 15px rgba(255,255,255,0.15);
+    }
+    .varnish-gloss {
+      filter: contrast(1.2) brightness(1.15) saturate(1.1);
+      box-shadow: inset 0 0 30px rgba(255,255,255,0.3);
+    }
+    /* Custom Scrollbar for Phone Container */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #8B7355;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-heritage-dark text-stone-100 min-h-screen flex flex-col selection:bg-amber-900 selection:text-amber-100">
+
+  <!-- Elegant Navbar -->
+  <header class="border-b border-stone-850 bg-heritage-card/90 backdrop-blur sticky top-0 z-40 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 bg-heritage-bronze rounded-xl text-white shadow-md">
+          <i data-lucide="armchair" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h1 class="serif-title text-xl font-bold tracking-wide">BHATIA INTERIOR</h1>
+          <p class="text-[10px] text-stone-400 font-semibold tracking-widest uppercase">Showroom & Custom Woodwork</p>
+        </div>
+      </div>
+      <nav class="flex items-center gap-6 text-sm text-stone-300 font-medium">
+        <a href="#emulator-section" class="hover:text-heritage-gold transition">App Emulator</a>
+        <a href="#material-lab" class="hover:text-heritage-gold transition">Varnish Lab</a>
+        <a href="#quote-estimator" class="hover:text-heritage-gold transition">Fabrication Estimator</a>
+        <a href="#client-portal" class="hover:text-heritage-gold transition">Client Portal</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="#downloads" class="px-4 py-2 text-xs font-semibold bg-heritage-bronze text-white rounded-full hover:bg-amber-800 transition shadow">
+          Download APK
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Unified Smartphone Emulator Showcase -->
+  <section id="emulator-section" class="max-w-7xl mx-auto px-6 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <!-- Left Panel: Branding & Concept Introduction -->
+    <div class="lg:col-span-5 space-y-6">
+      <span class="inline-flex items-center gap-2 px-3 py-1 bg-amber-950/40 border border-amber-900/50 text-heritage-gold text-xs font-semibold rounded-full uppercase tracking-wider">
+        <i data-lucide="sparkles" class="w-3 h-3 animate-spin"></i> Interactive Showcase Demo
+      </span>
+      <h2 class="serif-title text-4xl sm:text-5xl font-extrabold leading-tight text-white">
+        Luxury Bespoke <br>
+        <span class="text-heritage-gold">Woodcraft Virtualized</span>
+      </h2>
+      <p class="text-stone-300 leading-relaxed text-sm">
+        Welcome to the ultimate web demonstration suite of **Bhatia Interior**. Below you can experience our dual-purpose architecture: a high-fidelity <strong>Smartphone App Emulator</strong> showing our Jetpack Compose application, and our bespoke <strong>Material Laboratory</strong>.
+      </p>
+
+      <!-- Key App Features Grid -->
+      <div class="grid grid-cols-2 gap-4 pt-2">
+        <div class="p-4 bg-heritage-card rounded-2xl border border-stone-800 hover:border-heritage-accent/30 transition-all group">
+          <div class="text-heritage-gold mb-2 group-hover:scale-110 transition-transform"><i data-lucide="hammer" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-sm text-white">Bespoke Customizer</h3>
+          <p class="text-xs text-stone-400 mt-1">Configure premium teak/walnut species and hardware styles instantly.</p>
+        </div>
+        <div class="p-4 bg-heritage-card rounded-2xl border border-stone-800 hover:border-heritage-accent/30 transition-all group">
+          <div class="text-heritage-gold mb-2 group-hover:scale-110 transition-transform"><i data-lucide="activity" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-sm text-white">Milestone Tracking</h3>
+          <p class="text-xs text-stone-400 mt-1">Monitor design, cutting, and lacquer stages from home.</p>
+        </div>
+        <div class="p-4 bg-heritage-card rounded-2xl border border-stone-800 hover:border-heritage-accent/30 transition-all group">
+          <div class="text-heritage-gold mb-2 group-hover:scale-110 transition-transform"><i data-lucide="message-square" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-sm text-white">Architect Chat</h3>
+          <p class="text-xs text-stone-400 mt-1">Coordinated directly with our Lead Architect Sameer Bhatia.</p>
+        </div>
+        <div class="p-4 bg-heritage-card rounded-2xl border border-stone-800 hover:border-heritage-accent/30 transition-all group">
+          <div class="text-heritage-gold mb-2 group-hover:scale-110 transition-transform"><i data-lucide="calendar" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-sm text-white">Showroom Booking</h3>
+          <p class="text-xs text-stone-400 mt-1">Schedule VIP design walk-throughs in Mumbai Bandra West showroom.</p>
+        </div>
+      </div>
+
+      <!-- Quick Call-To-Action -->
+      <div class="pt-4 flex flex-col sm:flex-row gap-4">
+        <button onclick="document.getElementById('material-lab').scrollIntoView({ behavior: 'smooth' })" class="px-6 py-3 bg-heritage-bronze hover:bg-amber-800 text-white rounded-xl font-semibold shadow-lg transition text-center flex items-center justify-center gap-2">
+          <i data-lucide="flask-conical" class="w-5 h-5"></i> Varnish Lab Experiment
+        </button>
+        <a href="#downloads" class="px-6 py-3 bg-stone-800 hover:bg-stone-700 text-white rounded-xl font-semibold transition text-center flex items-center justify-center gap-2">
+          <i data-lucide="download" class="w-5 h-5"></i> Download Native APK
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Panel: High-Performance Phone Frame & Android App UI -->
+    <div class="lg:col-span-7 flex flex-col items-center justify-center">
+      <span class="text-xs text-heritage-gold font-semibold uppercase tracking-widest mb-3 animate-pulse">👇 Tap buttons inside screen to interact!</span>
+      
+      <div class="relative w-full max-w-[380px] h-[740px] bg-black rounded-[48px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] border-[10px] border-stone-800 overflow-hidden flex flex-col">
+        <!-- Phone Notch -->
+        <div class="phone-notch"></div>
+
+        <!-- Phone Status Bar -->
+        <div class="bg-[#12100E] px-6 pt-4 pb-2 flex justify-between items-center text-[10px] text-stone-400 z-30 select-none">
+          <span class="font-bold tracking-wide" id="clock-display">10:51 AM</span>
+          <div class="flex items-center gap-2">
+            <i data-lucide="wifi" class="w-3 h-3"></i>
+            <i data-lucide="signal" class="w-3 h-3"></i>
+            <div class="w-5 h-2.5 border border-stone-500 rounded-sm p-0.5 flex items-center">
+              <div class="w-full h-full bg-emerald-500 rounded-2xs"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android App Root Screen -->
+        <div class="flex-grow flex flex-col bg-[#12100E] overflow-hidden relative text-white">
+
+          <!-- APP BAR HEADER -->
+          <div class="px-4 py-3 bg-heritage-card border-b border-stone-900 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <span class="p-1.5 bg-heritage-bronze rounded-lg text-white"><i data-lucide="armchair" class="w-4 h-4"></i></span>
+              <div>
+                <h1 class="text-xs font-black tracking-wide text-white uppercase">Bhatia Interior</h1>
+                <p class="text-[9px] text-heritage-gold uppercase tracking-widest font-bold">Premium Studio</p>
+              </div>
+            </div>
+            <span class="inline-flex items-center gap-1 text-[9px] px-2 py-0.5 bg-amber-950/40 text-heritage-gold border border-amber-900/50 rounded-full font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> Live Build
+            </span>
+          </div>
+
+          <!-- APP SCREEN ROUTER VIEWPORT -->
+          <div class="flex-grow overflow-y-auto custom-scroll p-4 pb-20 relative">
+
+            <!-- VIEW 1: HOME SCREEN -->
+            <div id="screen-home" class="space-y-4">
+              <!-- Heritage Banner Card -->
+              <div class="relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-850 p-4 h-40 flex flex-col justify-end bg-cover bg-center" style="background-image: linear-gradient(0deg, rgba(18,16,14,0.98) 0%, rgba(18,16,14,0.3) 100%), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80');">
+                <span class="text-[9px] uppercase font-bold text-heritage-gold tracking-widest mb-1">New Collection</span>
+                <h3 class="text-sm font-bold text-white leading-tight">Heritage Wooden Craftsmanship</h3>
+                <p class="text-[10px] text-stone-300 mt-0.5 line-clamp-1">Classic Burmese Teak & Italian hardware.</p>
+              </div>
+
+              <!-- Interactive Wood Species Showcase -->
+              <div class="space-y-2">
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-heritage-gold flex items-center gap-1">
+                  <i data-lucide="tree-pine" class="w-3.5 h-3.5"></i> Premium Swatch Selector
+                </h4>
+                <div class="grid grid-cols-3 gap-2">
+                  <button onclick="selectWoodSwatch('teak')" class="p-2 rounded-xl border border-heritage-accent bg-heritage-card text-center transition flex flex-col items-center gap-1 active:scale-95" id="swatch-teak">
+                    <span class="w-6 h-6 rounded-full bg-[#8E5E38] border border-amber-900 shadow"></span>
+                    <span class="text-[10px] font-bold text-white">Burmese Teak</span>
+                  </button>
+                  <button onclick="selectWoodSwatch('walnut')" class="p-2 rounded-xl border border-stone-850 bg-stone-900 text-center transition flex flex-col items-center gap-1 active:scale-95" id="swatch-walnut">
+                    <span class="w-6 h-6 rounded-full bg-[#4E2E19] border border-stone-900 shadow"></span>
+                    <span class="text-[10px] font-bold text-stone-400">American Walnut</span>
+                  </button>
+                  <button onclick="selectWoodSwatch('oak')" class="p-2 rounded-xl border border-stone-850 bg-stone-900 text-center transition flex flex-col items-center gap-1 active:scale-95" id="swatch-oak">
+                    <span class="w-6 h-6 rounded-full bg-[#D4A373] border border-stone-800 shadow"></span>
+                    <span class="text-[10px] font-bold text-stone-400">White Oak</span>
+                  </button>
+                </div>
+
+                <!-- Live Description Box -->
+                <div class="p-3 bg-heritage-card/80 rounded-xl border border-stone-900 text-[10px] text-stone-300 leading-relaxed" id="wood-info-box">
+                  <span class="font-bold text-heritage-gold">Burmese Teak:</span> Extremely durable hardwood, renowned for natural oil content, golden-brown grain consistency, and elite decay resistance. Perfect for heritage statement furniture.
+                </div>
+              </div>
+
+              <!-- Showroom Articles -->
+              <div class="space-y-2 pt-1">
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Curated Design Journal</h4>
+                
+                <div class="flex gap-3 bg-heritage-card p-3 rounded-xl border border-stone-900 hover:border-heritage-accent/20 transition cursor-pointer">
+                  <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 object-cover rounded-lg" alt="Interior">
+                  <div>
+                    <h5 class="text-xs font-bold text-white">Space Geometry in Mumbai</h5>
+                    <p class="text-[9px] text-stone-400 mt-1 leading-normal">Maximize layout parameters with custom integrated wooden storage grids.</p>
+                  </div>
+                </div>
+
+                <div class="flex gap-3 bg-heritage-card p-3 rounded-xl border border-stone-900 hover:border-heritage-accent/20 transition cursor-pointer">
+                  <img src="https://images.unsplash.com/photo-1615529182906-13450f3c4590?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 object-cover rounded-lg" alt="Hardware">
+                  <div>
+                    <h5 class="text-xs font-bold text-white">Brushed Brass Cohesive Pairings</h5>
+                    <p class="text-[9px] text-stone-400 mt-1 leading-normal">How combining raw golden-tinted hardware coordinates with premium wood finishes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 2: BROWSE CATALOG SCREEN -->
+            <div id="screen-browse" class="hidden space-y-4">
+              <div class="flex items-center gap-2 bg-heritage-card px-3 py-2 rounded-xl border border-stone-850">
+                <i data-lucide="search" class="w-4 h-4 text-stone-400"></i>
+                <input type="text" placeholder="Search architectural designs..." class="bg-transparent text-xs text-white focus:outline-none w-full placeholder-stone-500">
+              </div>
+
+              <div class="space-y-3">
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-heritage-gold">Premium Architectural Catalogs</h4>
+                
+                <!-- Catalog Categories Grid -->
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Wardrobe">
+                    <h5 class="text-[10px] font-bold text-white">Bespoke Wardrobes</h5>
+                    <span class="text-[9px] text-heritage-gold">14 Formats Available</span>
+                  </div>
+                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Kitchen">
+                    <h5 class="text-[10px] font-bold text-white">Modular Kitchens</h5>
+                    <span class="text-[9px] text-heritage-gold">22 Design Schematics</span>
+                  </div>
+                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Beds">
+                    <h5 class="text-[10px] font-bold text-white">Poster Wooden Beds</h5>
+                    <span class="text-[9px] text-heritage-gold">8 Configurations</span>
+                  </div>
+                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41eaaced0168?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Study">
+                    <h5 class="text-[10px] font-bold text-white">Classic Office Dens</h5>
+                    <span class="text-[9px] text-heritage-gold">11 Blueprints</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 3: CUSTOMIZE CONFIGURATOR -->
+            <div id="screen-customize" class="hidden space-y-4">
+              <div class="bg-stone-900 border border-stone-850 rounded-xl p-3 flex items-center justify-between">
+                <div>
+                  <h4 class="text-xs font-bold text-white">Custom Fabrication Studio</h4>
+                  <p class="text-[9px] text-stone-400">Jetpack Compose Interactive UI</p>
+                </div>
+                <i data-lucide="sliders" class="w-4 h-4 text-heritage-gold"></i>
+              </div>
+
+              <!-- Interactive Virtual Wood Slab Graphic -->
+              <div class="h-32 bg-heritage-card rounded-xl border border-stone-850 flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center opacity-30 filter blur-2xs transition-all duration-300" id="cabinet-canvas-bg" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="relative z-10 space-y-1">
+                  <i data-lucide="layout" class="w-7 h-7 text-heritage-gold mx-auto animate-pulse"></i>
+                  <span class="text-xs font-bold text-white" id="app-canvas-title">Burmese Teak Wardrobe</span>
+                  <p class="text-[9px] text-stone-300" id="app-canvas-hardware">Equipped with Matte Black Iron Rails</p>
+                </div>
+              </div>
+
+              <!-- Option Selectors -->
+              <div class="space-y-3">
+                <div class="space-y-1">
+                  <label class="text-[9px] font-bold uppercase tracking-wider text-stone-400">Select Hardwood Type</label>
+                  <select onchange="updateAppConfigurator()" id="app-wood-select" class="w-full bg-heritage-card border border-stone-850 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-heritage-accent">
+                    <option value="teak" data-price="120000">Burmese Teak Wood (1st Grade) — +₹1,20,000</option>
+                    <option value="walnut" data-price="145000">American Black Walnut — +₹1,45,000</option>
+                    <option value="oak" data-price="95000">Sustainably Harvested White Oak — +₹95,000</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[9px] font-bold uppercase tracking-wider text-stone-400">Architectural Hardware</label>
+                  <select onchange="updateAppConfigurator()" id="app-hardware-select" class="w-full bg-heritage-card border border-stone-850 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-heritage-accent">
+                    <option value="black" data-price="15000">Matte Black Iron Pulls — +₹15,000</option>
+                    <option value="brass" data-price="25000">Brushed Brass Knobs — +₹25,000</option>
+                    <option value="chrome" data-price="10000">Polished Chrome Handles — +₹10,000</option>
+                  </select>
+                </div>
+
+                <!-- Price & Saved Button -->
+                <div class="p-3 bg-amber-950/20 border border-amber-900/30 rounded-xl flex justify-between items-center">
+                  <div>
+                    <span class="text-[9px] uppercase font-bold text-stone-400">Estimated Cost</span>
+                    <h5 class="text-xs font-black text-heritage-gold" id="app-cost-display">₹ 1,35,000/-</h5>
+                  </div>
+                  <button onclick="saveAppMoodboard()" class="px-3 py-1.5 bg-heritage-bronze hover:bg-amber-800 text-white rounded-lg text-[9px] font-bold transition flex items-center gap-1">
+                    <i data-lucide="heart" class="w-3 h-3"></i> Save Moodboard
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 4: PROGRESS TRACKER & CHAT -->
+            <div id="screen-tracker" class="hidden space-y-4">
+              <!-- Active Progress Card -->
+              <div class="bg-heritage-card p-3 rounded-xl border border-stone-850 space-y-3">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <span class="text-[8px] uppercase font-bold text-heritage-gold px-2 py-0.5 bg-amber-950 rounded-full">Stage 3: Finishing</span>
+                    <h4 class="text-[11px] font-bold text-white mt-1.5">Teakwood Walk-in Cabinet</h4>
+                  </div>
+                  <span class="text-xs font-black text-heritage-gold">75%</span>
+                </div>
+
+                <!-- Linear Progress Tracker bar -->
+                <div class="w-full bg-stone-800 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-heritage-bronze h-full w-[75%]"></div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-1 text-center text-[9px] text-stone-400">
+                  <div>
+                    <span class="block text-white font-bold">14 May</span>
+                    <span>Timber Cut</span>
+                  </div>
+                  <div>
+                    <span class="block text-white font-bold">28 May</span>
+                    <span>Carpentry</span>
+                  </div>
+                  <div>
+                    <span class="block text-heritage-gold font-bold">Today</span>
+                    <span class="text-heritage-gold">Wax Finish</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Chat Interface inside app -->
+              <div class="space-y-2">
+                <h4 class="text-[9px] font-bold uppercase tracking-wider text-stone-400 flex items-center gap-1">
+                  <i data-lucide="message-square" class="w-3.5 h-3.5 text-heritage-gold"></i> Architect Sameer Bhatia
+                </h4>
+                <div class="bg-stone-900 rounded-xl border border-stone-850 h-40 flex flex-col overflow-hidden">
+                  <div class="flex-grow p-3 space-y-2 overflow-y-auto custom-scroll text-[10px]" id="app-chat-container">
+                    <div class="flex flex-col items-start space-y-1">
+                      <span class="text-[8px] text-stone-500 font-bold">Ar. Sameer Bhatia</span>
+                      <div class="bg-heritage-card text-stone-200 px-3 py-1.5 rounded-2xl rounded-tl-none border border-stone-850 max-w-[85%]">
+                        Hello Damodar! The main structure of your cabinet is fully carved. Do you prefer a high-gloss coat or a matte polish?
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-1.5 border-t border-stone-850 bg-heritage-card flex gap-1.5">
+                    <input type="text" id="app-chat-input" placeholder="Type polish preference..." class="bg-stone-900 border border-stone-850 rounded-lg text-[9px] px-2.5 py-1 text-white focus:outline-none focus:border-heritage-accent flex-grow">
+                    <button onclick="sendAppChatMessage()" class="p-1.5 bg-heritage-bronze rounded-lg text-white hover:bg-amber-800 transition">
+                      <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 5: BOOKING SCHEDULER -->
+            <div id="screen-contact" class="hidden space-y-4">
+              <!-- Location Card -->
+              <div class="bg-heritage-card p-3 rounded-xl border border-stone-850 flex items-center gap-3">
+                <div class="p-2 bg-heritage-bronze-light text-heritage-gold rounded-lg">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-white">Mumbai Bandra Studio</h4>
+                  <p class="text-[9px] text-stone-400 leading-none">Linking Road, Bandra West, Mumbai</p>
+                </div>
+              </div>
+
+              <!-- Booking Form -->
+              <form id="app-booking-form" onsubmit="handleAppBooking(event)" class="space-y-3">
+                <h4 class="text-[10px] font-bold uppercase tracking-wider text-heritage-gold">Request Private Consultation</h4>
+
+                <div class="space-y-1">
+                  <label class="text-[9px] text-stone-400 font-bold">Client Full Name</label>
+                  <input type="text" id="app-booking-name" required placeholder="Ex. Damodar Suthar" class="w-full bg-heritage-card border border-stone-850 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-heritage-accent">
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[9px] text-stone-400 font-bold">Space Service Category</label>
+                  <select class="w-full bg-heritage-card border border-stone-850 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-heritage-accent">
+                    <option>Modular Kitchen Design</option>
+                    <option>Bespoke Turnkey Wardrobes</option>
+                    <option>Luxury Living Room Remodel</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[9px] text-stone-400 font-bold">Preferred Visit Date</label>
+                  <input type="date" required class="w-full bg-heritage-card border border-stone-850 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-heritage-accent">
+                </div>
+
+                <button type="submit" class="w-full py-2 bg-heritage-bronze hover:bg-amber-800 text-white rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Request Schedule
+                </button>
+              </form>
+            </div>
+
+          </div>
+
+          <!-- PHONE NAVIGATION BAR (Material 3 Dynamic Style) -->
+          <div class="absolute bottom-0 left-0 right-0 bg-[#141210]/98 border-t border-stone-900 py-3 px-2 flex justify-between items-center z-30 select-none">
+            
+            <button onclick="switchAppTab('home')" id="tab-btn-home" class="flex flex-col items-center gap-1 text-heritage-gold text-[9px] font-bold transition flex-1">
+              <i data-lucide="home" class="w-4 h-4"></i>
+              <span>Home</span>
+            </button>
+
+            <button onclick="switchAppTab('browse')" id="tab-btn-browse" class="flex flex-col items-center gap-1 text-stone-400 text-[9px] font-medium transition flex-1">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+              <span>Browse</span>
+            </button>
+
+            <button onclick="switchAppTab('customize')" id="tab-btn-customize" class="flex flex-col items-center gap-1 text-stone-400 text-[9px] font-medium transition flex-1">
+              <i data-lucide="sliders" class="w-4 h-4"></i>
+              <span>Customize</span>
+            </button>
+
+            <button onclick="switchAppTab('tracker')" id="tab-btn-tracker" class="flex flex-col items-center gap-1 text-stone-400 text-[9px] font-medium transition flex-1">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              <span>Tracker</span>
+            </button>
+
+            <button onclick="switchAppTab('contact')" id="tab-btn-contact" class="flex flex-col items-center gap-1 text-stone-400 text-[9px] font-medium transition flex-1">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>Contact</span>
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Interactive Material & Varnish Laboratory Section (New!) -->
+  <section id="material-lab" class="bg-heritage-card border-t border-b border-stone-850 py-16 px-6">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-heritage-gold">Laboratory Suite</span>
+        <h3 class="serif-title text-3xl sm:text-4xl font-black text-white">Interactive Wood Varnish Lab</h3>
+        <p class="text-stone-300 text-sm">
+          Experiment with raw wood swatches harvested by Bhatia Interior. Use our responsive custom rendering engine to select wood species and varnishes to visualize the final cabinetry texture!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Lab Options -->
+        <div class="lg:col-span-5 space-y-6 bg-black/40 p-6 sm:p-8 rounded-3xl border border-stone-800">
+          
+          <!-- Swatch Select -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold text-heritage-gold uppercase tracking-wider">1. Select Wood Timber Specimen</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <button onclick="labSelectWood('teak', '#8E5E38')" class="p-3 rounded-xl border-2 border-heritage-accent bg-stone-900 text-left transition duration-200" id="lab-btn-teak">
+                <span class="block text-xs font-bold text-white">Burmese Teak</span>
+                <span class="block text-[10px] text-stone-400 mt-1">High strength oil structure</span>
+              </button>
+              <button onclick="labSelectWood('walnut', '#3D2516')" class="p-3 rounded-xl border-2 border-stone-800 bg-stone-900 text-left transition duration-200" id="lab-btn-walnut">
+                <span class="block text-xs font-bold text-white">American Walnut</span>
+                <span class="block text-[10px] text-stone-400 mt-1">Wave grain visual character</span>
+              </button>
+              <button onclick="labSelectWood('oak', '#CBB18B')" class="p-3 rounded-xl border-2 border-stone-800 bg-stone-900 text-left transition duration-200" id="lab-btn-oak">
+                <span class="block text-xs font-bold text-white">White Oak</span>
+                <span class="block text-[10px] text-stone-400 mt-1">Minimalist straight fiber</span>
+              </button>
+              <button onclick="labSelectWood('mahogany', '#5C2E16')" class="p-3 rounded-xl border-2 border-stone-800 bg-stone-900 text-left transition duration-200" id="lab-btn-mahogany">
+                <span class="block text-xs font-bold text-white">Sapele Mahogany</span>
+                <span class="block text-[10px] text-stone-400 mt-1">Dense reddish deep tone</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Varnish Vibe Select -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold text-heritage-gold uppercase tracking-wider">2. Select Varnish Coating Grade</h4>
+            <div class="grid grid-cols-3 gap-2">
+              <button onclick="labSelectVarnish('matte')" class="py-2 px-3 rounded-lg border-2 border-heritage-accent bg-stone-900 text-center text-xs font-bold text-white" id="varnish-btn-matte">
+                Matte Polish
+              </button>
+              <button onclick="labSelectVarnish('satin')" class="py-2 px-3 rounded-lg border-2 border-stone-800 bg-stone-900 text-center text-xs font-bold text-stone-400" id="varnish-btn-satin">
+                Satin Sheen
+              </button>
+              <button onclick="labSelectVarnish('gloss')" class="py-2 px-3 rounded-lg border-2 border-stone-800 bg-stone-900 text-center text-xs font-bold text-stone-400" id="varnish-btn-gloss">
+                High Gloss
+              </button>
+            </div>
+          </div>
+
+          <!-- Sustainability Specs Card -->
+          <div class="p-4 bg-heritage-bronze-light border border-heritage-accent/20 rounded-2xl flex items-start gap-3">
+            <div class="text-heritage-gold mt-1"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+            <div>
+              <h5 class="text-xs font-bold text-white">Certified Ethical Timber</h5>
+              <p class="text-[11px] text-stone-400 mt-0.5 leading-relaxed">
+                All timber lots harvested for Bhatia Interior showrooms carry direct certifications from global sustainable forestry councils.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Simulated Wood Slab Renderer Display -->
+        <div class="lg:col-span-7 flex flex-col items-center justify-center space-y-4">
+          <div class="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden border border-stone-800 shadow-2xl bg-stone-950 flex flex-col justify-end p-6">
+            <!-- Wood Grain Swatch background with transition overlay -->
+            <div class="absolute inset-0 bg-cover bg-center transition-all duration-500 transform scale-105" id="lab-wood-display" style="background-image: url('https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80'); filter: contrast(1) brightness(1);"></div>
+            
+            <!-- Varnish reflection sheen dynamic overlay -->
+            <div class="absolute inset-0 pointer-events-none transition-all duration-300" id="lab-sheen-overlay" style="background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.15) 100%);"></div>
+
+            <!-- Specimen Title Details tag -->
+            <div class="relative z-10 bg-black/80 backdrop-blur-md p-4 rounded-2xl border border-stone-800/80 max-w-md">
+              <span class="text-[9px] uppercase font-black text-heritage-gold tracking-widest block mb-0.5">Physical Hardwood Sample</span>
+              <h4 class="text-base font-black text-white" id="lab-specimen-title">Burmese Teak (Tectona grandis)</h4>
+              <p class="text-[11px] text-stone-300 mt-1 leading-relaxed" id="lab-specimen-desc">
+                First-grade hardwood featuring tight straight grains, natural waterproofing essential oils, and massive weight endurance specifications.
+              </p>
+              <div class="flex gap-4 mt-3 pt-3 border-t border-stone-800 text-[10px] text-stone-400">
+                <span>Varnish Sheen: <strong class="text-heritage-gold" id="lab-varnish-label">Matte Coat</strong></span>
+                <span>Varnish Thickness: <strong class="text-stone-300">0.25mm wax</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Quotation & Fabrication Cost Estimator (New!) -->
+  <section id="quote-estimator" class="py-16 px-6 max-w-7xl mx-auto space-y-12">
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <span class="text-xs uppercase tracking-widest font-extrabold text-heritage-gold">Bespoke Estimator</span>
+      <h3 class="serif-title text-3xl sm:text-4xl font-black text-white">Fabrication Cost Calculator</h3>
+      <p class="text-stone-300 text-sm">
+        Input your target custom furniture dimensions. Our estimator translates wood materials, fabrication complexity, and scale parameters instantly into standard budget estimates.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Calculator Inputs Form -->
+      <div class="lg:col-span-6 bg-heritage-card p-6 sm:p-8 rounded-3xl border border-stone-850 space-y-6">
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+          <i data-lucide="calculator" class="text-heritage-gold"></i> Dimension Specifications
+        </h4>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-stone-400 block">Unit Type</label>
+            <select id="est-type" onchange="calculateFabricationCost()" class="w-full bg-stone-900 border border-stone-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-heritage-accent">
+              <option value="wardrobe">Modular Wardrobe</option>
+              <option value="kitchen">Modular Kitchen Shelf</option>
+              <option value="bed">Custom Poster Bed</option>
+              <option value="table">Dining Table Slab</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-stone-400 block">Timber Lot</label>
+            <select id="est-material" onchange="calculateFabricationCost()" class="w-full bg-stone-900 border border-stone-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-heritage-accent">
+              <option value="teak">Burmese Teak (Grade A)</option>
+              <option value="walnut">American Walnut</option>
+              <option value="oak">White Oak Lot</option>
+              <option value="mahogany">Red Mahogany</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-stone-400 block" id="dim-w-label">Width (Feet)</label>
+            <input type="number" id="est-width" oninput="calculateFabricationCost()" value="6" min="2" max="24" class="w-full bg-stone-900 border border-stone-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-heritage-accent">
+          </div>
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-stone-400 block" id="dim-h-label">Height (Feet)</label>
+            <input type="number" id="est-height" oninput="calculateFabricationCost()" value="8" min="2" max="12" class="w-full bg-stone-900 border border-stone-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-heritage-accent">
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <label class="text-xs font-semibold text-stone-400 flex justify-between">
+            <span>Special Hardware / Accent Complexity</span>
+            <span id="complexity-pct" class="text-heritage-gold font-bold">15% Complexity</span>
+          </label>
+          <input type="range" id="est-complexity" oninput="calculateFabricationCost()" min="0" max="40" value="15" class="w-full accent-heritage-accent">
+          <p class="text-[10px] text-stone-500 leading-normal">
+            Includes custom brushed brass hinges, integrated soft-closing drawer glides, dynamic lighting strips, and structural complexity factors.
+          </p>
+        </div>
+      </div>
+
+      <!-- Live Calculation Invoice Display -->
+      <div class="lg:col-span-6 bg-stone-900/40 border border-stone-850 rounded-3xl p-6 sm:p-8 space-y-6">
+        <h4 class="text-xs font-bold text-heritage-gold uppercase tracking-widest">Fabrication Budget Summary</h4>
+        
+        <div class="space-y-4 pt-2 border-b border-stone-850 pb-6">
+          <div class="flex justify-between text-xs text-stone-400">
+            <span>Base Wood Supply (Lot Specific)</span>
+            <span id="invoice-base" class="text-white font-mono">₹ 72,000/-</span>
+          </div>
+          <div class="flex justify-between text-xs text-stone-400">
+            <span>Dimension Volume Fabrication Premium</span>
+            <span id="invoice-dim-premium" class="text-white font-mono">₹ 24,000/-</span>
+          </div>
+          <div class="flex justify-between text-xs text-stone-400">
+            <span>Hardware & Accent Complexity Upgrade</span>
+            <span id="invoice-comp-premium" class="text-white font-mono">₹ 14,400/-</span>
+          </div>
+          <div class="flex justify-between text-xs text-stone-400">
+            <span>Showroom Delivery & Fitting Insurance</span>
+            <span id="invoice-delivery" class="text-white font-mono">₹ 5,000/-</span>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center bg-heritage-card p-4 rounded-2xl border border-stone-800">
+          <div>
+            <span class="text-[10px] uppercase font-bold text-stone-400 block">Total Est. Fabrication Cost</span>
+            <span class="text-2xl font-black text-heritage-gold font-mono" id="invoice-total">₹ 1,15,400/-</span>
+          </div>
+          <button onclick="alert('Configuration quote requested! Use ticket ID BI-EST-2026 to coordinate at our showroom.')" class="px-5 py-2.5 bg-heritage-bronze hover:bg-amber-800 text-white rounded-xl text-xs font-extrabold transition shadow-lg">
+            Submit RFQ Quote
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 text-[10px] text-stone-500 leading-normal">
+          <i data-lucide="info" class="w-4 h-4 flex-shrink-0 text-stone-400"></i>
+          <span>Note: Fabrication metrics are calculated based on raw material market index averages and are subject to showroom verification.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Client Project Schedule Portal (New!) -->
+  <section id="client-portal" class="bg-heritage-card border-t border-b border-stone-850 py-16 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Informational Column -->
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-xs uppercase tracking-widest font-extrabold text-heritage-gold">Client Experience</span>
+        <h3 class="serif-title text-3xl sm:text-4xl font-black text-white">Bespoke Client Progress Portal</h3>
+        <p class="text-stone-300 text-sm leading-relaxed">
+          At Bhatia Interior, we believe complete transparent schedules are essential for high-end home styling. Enter your showroom design ticket ID below to fetch live milestones, carpentry stages, lacquer statuses, and expected delivery coordinates.
+        </p>
+        
+        <div class="space-y-3 pt-2">
+          <div class="flex gap-3">
+            <span class="p-2 bg-stone-900 border border-stone-800 rounded-lg text-heritage-gold"><i data-lucide="hash" class="w-4 h-4"></i></span>
+            <div>
+              <h5 class="text-xs font-bold text-white">Unique Showroom Ticket ID</h5>
+              <p class="text-[11px] text-stone-400">Provided at Mumbai showrooms during design finalization.</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <span class="p-2 bg-stone-900 border border-stone-800 rounded-lg text-heritage-gold"><i data-lucide="hourglass" class="w-4 h-4"></i></span>
+            <div>
+              <h5 class="text-xs font-bold text-white">Milestone History Logs</h5>
+              <p class="text-[11px] text-stone-400">Instantly browse dates when raw teak was cut, joined, and lacquered.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Search Lookup & Milestones Box -->
+      <div class="lg:col-span-7 bg-black/40 p-6 sm:p-8 rounded-3xl border border-stone-800 space-y-6">
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-stone-400 uppercase tracking-wider block">Enter Design Ticket ID</label>
+          <div class="flex gap-2">
+            <input type="text" id="client-ticket-id" value="BI-9081" placeholder="Ex. BI-1049" class="bg-stone-900 border border-stone-850 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-heritage-accent flex-grow font-mono uppercase">
+            <button onclick="lookupClientTicket()" class="px-6 py-3 bg-heritage-bronze hover:bg-amber-800 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-md">
+              <i data-lucide="search" class="w-4 h-4"></i> Search Portal
+            </button>
+          </div>
+          <p class="text-[10px] text-stone-500">Test with preloaded IDs: <strong class="text-stone-400 font-mono">BI-9081</strong>, <strong class="text-stone-400 font-mono">BI-1120</strong>, or <strong class="text-stone-400 font-mono">BI-5044</strong>.</p>
+        </div>
+
+        <!-- Lookup Result Screen Area -->
+        <div class="bg-heritage-card p-5 rounded-2xl border border-stone-800 space-y-4" id="ticket-result-box">
+          <div class="flex justify-between items-start border-b border-stone-850 pb-3">
+            <div>
+              <span class="text-[9px] uppercase font-black text-heritage-gold px-2 py-0.5 bg-amber-950/40 rounded-full border border-amber-900/40">Active Project</span>
+              <h4 class="text-sm font-black text-white mt-1.5" id="ticket-title">Bespoke Teakwood Dining Slab</h4>
+            </div>
+            <span class="text-lg font-black text-heritage-gold font-mono" id="ticket-percentage">80%</span>
+          </div>
+
+          <!-- Progress Bar wrapper -->
+          <div class="w-full bg-stone-850 h-2 rounded-full overflow-hidden">
+            <div class="bg-heritage-bronze h-full transition-all duration-500" id="ticket-progress-bar" style="width: 80%;"></div>
+          </div>
+
+          <!-- Milestones Tree -->
+          <div class="space-y-3 pt-2 text-xs" id="ticket-milestones">
+            <div class="flex gap-3 items-center">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+              <div>
+                <span class="font-bold text-white">Raw Hardwood Sourced & Cut</span>
+                <p class="text-[10px] text-stone-400">Completed on June 04, 2026 — Verified by lead lumber officer</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+              <div>
+                <span class="font-bold text-white">Joinery & Assembly Carpentry</span>
+                <p class="text-[10px] text-stone-400">Completed on June 18, 2026 — Master carpenter joinery audit passed</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i data-lucide="hourglass" class="w-4 h-4 text-heritage-gold animate-spin"></i>
+              <div>
+                <span class="font-bold text-white">Varnish & Polyurethane Lacquer</span>
+                <p class="text-[10px] text-stone-400">Active Stage — Multiple coats scheduled for deep wood grains</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Native Packaging & APK CLI Guide -->
+  <section id="downloads" class="max-w-7xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Native APK Benefits -->
+    <div class="space-y-6">
+      <h3 class="serif-title text-3xl font-bold text-white">Download the Android Native Application</h3>
+      <p class="text-stone-300 leading-relaxed text-sm">
+        While our web simulation offers exceptional client feedback, testing on real physical screens is unmatched. Our application compiles directly into a standalone <strong>Debug APK</strong> built on modern architectures:
+      </p>
+
+      <div class="space-y-3 bg-heritage-card p-5 rounded-2xl border border-stone-800">
+        <h4 class="text-xs font-bold text-heritage-gold uppercase tracking-wider flex items-center gap-1.5">
+          <i data-lucide="info" class="w-4.5 h-4.5"></i> Native Architecture Specs
+        </h4>
+        <ul class="text-xs text-stone-400 space-y-1.5 list-disc pl-4">
+          <li>Full support across Android SDK 26 (Android 8.0) up to Android 14 (SDK 34).</li>
+          <li>Optimized <strong>Jetpack Compose</strong> vector layouts for instantaneous responsiveness.</li>
+          <li>Edge-to-edge system bar layout with full gesture navigation awareness.</li>
+          <li>Room SQLite Database local persistence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Compile Tutorial -->
+    <div class="space-y-6">
+      <h3 class="serif-title text-2xl font-bold text-white flex items-center gap-2">
+        <i data-lucide="terminal" class="w-6 h-6 text-heritage-gold"></i> Local Gradle Compilation
+      </h3>
+      <p class="text-stone-300 text-sm leading-relaxed">
+        If you clone this repository to your local system, you can build and package the native application instantly using the standard Gradle wrappers:
+      </p>
+      
+      <div class="bg-black/80 rounded-xl p-5 font-mono text-xs text-emerald-400 border border-stone-850 space-y-2">
+        <div class="flex justify-between text-[10px] text-stone-500 font-sans border-b border-stone-900 pb-2 mb-2">
+          <span>Terminal Commands</span>
+          <span>Android Studio CLI</span>
+        </div>
+        <div># Navigate to the project root directory</div>
+        <div class="text-white">cd bhatia-interior</div>
+        <div class="mt-3"># Clean previous builds (optional)</div>
+        <div class="text-white">./gradlew clean</div>
+        <div class="mt-3"># Compile and assemble debug APK</div>
+        <div class="text-white">./gradlew assembleDebug</div>
+        <div class="mt-3"># Output folder: app/build/outputs/apk/debug/app-debug.apk</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Elegant Footer -->
+  <footer class="bg-black py-10 px-6 text-center text-xs text-stone-500 border-t border-stone-900">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-heritage-bronze rounded text-white"><i data-lucide="armchair" class="w-4 h-4"></i></span>
+        <span class="font-extrabold text-white text-sm tracking-wide">BHATIA INTERIOR</span>
+      </div>
+      <p>&copy; 2026 Bhatia Interior Architectural Studio. Built for digital demonstration and native portfolios.</p>
+      <div class="flex gap-6">
+        <a href="#emulator-section" class="hover:text-stone-300 transition">Web App Emulator</a>
+        <a href="#material-lab" class="hover:text-stone-300 transition">Material Lab</a>
+        <a href="#quote-estimator" class="hover:text-stone-300 transition">Calculator</a>
+        <a href="#client-portal" class="hover:text-stone-300 transition">Client Logs</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Web Application Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Live Smartphone Clock Update
+    function updateClock() {
+      const display = document.getElementById('clock-display');
+      if (!display) return;
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      display.textContent = hours + ':' + minutes + ' ' + ampm;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 2. Tab Navigation within the Smartphone Frame
+    const appScreens = ['home', 'browse', 'customize', 'tracker', 'contact'];
+    function switchAppTab(targetScreen) {
+      appScreens.forEach(s => {
+        const screenEl = document.getElementById('screen-' + s);
+        const navBtn = document.getElementById('tab-btn-' + s);
+        if (s === targetScreen) {
+          screenEl.classList.remove('hidden');
+          navBtn.classList.add('text-heritage-gold', 'font-bold');
+          navBtn.classList.remove('text-stone-400', 'font-medium');
+        } else {
+          screenEl.classList.add('hidden');
+          navBtn.classList.remove('text-heritage-gold', 'font-bold');
+          navBtn.classList.add('text-stone-400', 'font-medium');
+        }
+      });
+    }
+
+    // 3. Home Screen Wood Swatches Selection
+    const swatchDesc = {
+      teak: {
+        title: "Burmese Teak",
+        desc: "Extremely durable hardwood, renowned for natural oil content, golden-brown grain consistency, and elite decay resistance. Perfect for heritage statement furniture."
+      },
+      walnut: {
+        title: "American Walnut",
+        desc: "Slightly darker rich chocolate brown tones, prized for complex wave-pattern grains, moderate strength, and elite premium visual character. Often used for fine-dining statement tables."
+      },
+      oak: {
+        title: "White Oak",
+        desc: "Strong, straight-grain wood boasting an organic honey hue. Perfect for spacious modern apartments, minimalist designs, or heavy-duty load bearing storage units."
+      }
+    };
+    function selectWoodSwatch(wood) {
+      const swatchKeys = ['teak', 'walnut', 'oak'];
+      swatchKeys.forEach(s => {
+        const btn = document.getElementById('swatch-' + s);
+        if (s === wood) {
+          btn.classList.add('border-heritage-accent', 'bg-heritage-card');
+          btn.classList.remove('border-stone-850', 'bg-stone-900');
+        } else {
+          btn.classList.remove('border-heritage-accent', 'bg-heritage-card');
+          btn.classList.add('border-stone-850', 'bg-stone-900');
+        }
+      });
+
+      // Update Swatch Information Display
+      const infoBox = document.getElementById('wood-info-box');
+      infoBox.innerHTML = `<span class="font-bold text-heritage-gold">${swatchDesc[wood].title}:</span> ${swatchDesc[wood].desc}`;
+    }
+
+    // 4. Smartphone Customizer Configuration Engine
+    function updateAppConfigurator() {
+      const woodSelect = document.getElementById('app-wood-select');
+      const hardwareSelect = document.getElementById('app-hardware-select');
+
+      const woodPrice = parseInt(woodSelect.options[woodSelect.selectedIndex].getAttribute('data-price')) || 0;
+      const hardwarePrice = parseInt(hardwareSelect.options[hardwareSelect.selectedIndex].getAttribute('data-price')) || 0;
+
+      const totalCost = woodPrice + hardwarePrice;
+      document.getElementById('app-cost-display').textContent = `₹ ${totalCost.toLocaleString('en-IN')}/-`;
+
+      // Update virtual visual canvas text
+      const selectedWoodName = woodSelect.options[woodSelect.selectedIndex].text.split('(')[0].trim();
+      const selectedHardwareName = hardwareSelect.options[hardwareSelect.selectedIndex].text.split('—')[0].trim();
+
+      document.getElementById('app-canvas-title').textContent = `${selectedWoodName} Unit`;
+      document.getElementById('app-canvas-hardware').textContent = `Equipped with ${selectedHardwareName}`;
+    }
+
+    function saveAppMoodboard() {
+      alert("Success! Configuration saved locally to your client profile's Moodboard database.");
+    }
+
+    // 5. Chat messenger inside app simulation
+    function sendAppChatMessage() {
+      const input = document.getElementById('app-chat-input');
+      const msgText = input.value.trim();
+      if (!msgText) return;
+
+      const chatContainer = document.getElementById('app-chat-container');
+
+      // Create client bubble
+      const clientBubble = document.createElement('div');
+      clientBubble.className = "flex flex-col items-end space-y-1";
+      clientBubble.innerHTML = `
+        <span class="text-[8px] text-stone-500 font-bold">You (Client)</span>
+        <div class="bg-heritage-bronze text-white px-3 py-1.5 rounded-2xl rounded-tr-none max-w-[85%] text-right">
+          ${msgText}
+        </div>
+      `;
+      chatContainer.appendChild(clientBubble);
+
+      // Reset and scroll
+      input.value = "";
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      // Simulate Sameer Bhatia typing and replying
+      setTimeout(() => {
+        const responseBubble = document.createElement('div');
+        responseBubble.className = "flex flex-col items-start space-y-1 animate-pulse";
+        responseBubble.innerHTML = `
+          <span class="text-[8px] text-stone-500 font-bold">Ar. Sameer Bhatia</span>
+          <div class="bg-heritage-card text-stone-200 px-3 py-1.5 rounded-2xl rounded-tl-none border border-stone-850 max-w-[85%]">
+            Noted! I have submitted these requirements directly to the carpentry warehouse lot. Talk to you soon!
+          </div>
+        `;
+        chatContainer.appendChild(responseBubble);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+        lucide.createIcons();
+      }, 1200);
+    }
+
+    // Trigger chat send on Enter press
+    document.getElementById('app-chat-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendAppChatMessage();
+      }
+    });
+
+    // 6. Booking scheduler inside app simulation
+    function handleAppBooking(event) {
+      event.preventDefault();
+      const clientName = document.getElementById('app-booking-name').value;
+      alert(`Consultation Scheduled! Thank you ${clientName}, our design head Sameer Bhatia has blocked this slot. See you at our Bandra showroom.`);
+      document.getElementById('app-booking-form').reset();
+    }
+
+
+    // ============================================
+    // DYNAMIC EXPERIMENT 1: WOOD VARNISH LAB CODE
+    // ============================================
+    const labWoods = {
+      teak: {
+        title: "Burmese Teak (Tectona grandis)",
+        desc: "First-grade hardwood featuring tight straight grains, natural waterproofing essential oils, and massive weight endurance specifications.",
+        img: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80"
+      },
+      walnut: {
+        title: "American Black Walnut (Juglans nigra)",
+        desc: "Prized dark heartwood showcasing signature high-contrast grain curves. Ideal for elegant single-slab conference furniture or structural accents.",
+        img: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80"
+      },
+      oak: {
+        title: "White Oak (Quercus alba)",
+        desc: "Boasts a beautiful straight wood fiber system and a contemporary light honey color tone. Ideal for neutral minimalist scandinavian spaces.",
+        img: "https://images.unsplash.com/photo-1611269151242-74a09c6ee3c1?auto=format&fit=crop&w=800&q=80"
+      },
+      mahogany: {
+        title: "Sapele Mahogany (Entandrophragma cylindricum)",
+        desc: "Very dense redwood timber showcasing straight vertical ribbon grain patterns, deep mahogany bronze reflections, and elite durability ratings.",
+        img: "https://images.unsplash.com/photo-1517502884422-41eaaced0168?auto=format&fit=crop&w=800&q=80"
+      }
+    };
+
+    let activeLabWood = 'teak';
+    let activeLabVarnish = 'matte';
+
+    function labSelectWood(woodKey, color) {
+      activeLabWood = woodKey;
+      
+      // Update active border styles
+      ['teak', 'walnut', 'oak', 'mahogany'].forEach(w => {
+        const btn = document.getElementById('lab-btn-' + w);
+        if (w === woodKey) {
+          btn.classList.add('border-heritage-accent');
+          btn.classList.remove('border-stone-800');
+        } else {
+          btn.classList.remove('border-heritage-accent');
+          btn.classList.add('border-stone-800');
+        }
+      });
+
+      // Update display wood grain background
+      const displayEl = document.getElementById('lab-wood-display');
+      displayEl.style.backgroundImage = `url('${labWoods[woodKey].img}')`;
+
+      // Update descriptive text labels
+      document.getElementById('lab-specimen-title').textContent = labWoods[woodKey].title;
+      document.getElementById('lab-specimen-desc').textContent = labWoods[woodKey].desc;
+
+      applyVarnishVisualEffects();
+    }
+
+    function labSelectVarnish(varnishKey) {
+      activeLabVarnish = varnishKey;
+
+      // Update button border styles
+      ['matte', 'satin', 'gloss'].forEach(v => {
+        const btn = document.getElementById('varnish-btn-' + v);
+        if (v === varnishKey) {
+          btn.classList.add('border-heritage-accent', 'text-white');
+          btn.classList.remove('border-stone-800', 'text-stone-400');
+        } else {
+          btn.classList.remove('border-heritage-accent', 'text-white');
+          btn.classList.add('border-stone-800', 'text-stone-400');
+        }
+      });
+
+      // Update text label inside lab card
+      const varnishLabels = {
+        matte: "Matte Varnish (Wax Finish)",
+        satin: "Satin Varnish (Medium Sheen)",
+        gloss: "High-Gloss Polyurethane Lacquer"
+      };
+      document.getElementById('lab-varnish-label').textContent = varnishLabels[varnishKey];
+
+      applyVarnishVisualEffects();
+    }
+
+    function applyVarnishVisualEffects() {
+      const displayEl = document.getElementById('lab-wood-display');
+      const sheenEl = document.getElementById('lab-sheen-overlay');
+
+      if (activeLabVarnish === 'matte') {
+        displayEl.style.filter = "contrast(1) brightness(1) saturate(0.95)";
+        sheenEl.style.background = "linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,0.1) 100%)";
+      } else if (activeLabVarnish === 'satin') {
+        displayEl.style.filter = "contrast(1.1) brightness(1.05) saturate(1)";
+        sheenEl.style.background = "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 40%, rgba(0,0,0,0.2) 100%)";
+      } else if (activeLabVarnish === 'gloss') {
+        displayEl.style.filter = "contrast(1.2) brightness(1.1) saturate(1.08)";
+        sheenEl.style.background = "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 30%, rgba(0,0,0,0.25) 100%)";
+      }
+    }
+
+
+    // ============================================
+    // DYNAMIC EXPERIMENT 2: FABRICATION ESTIMATOR
+    // ============================================
+    const pricingRates = {
+      teak: { base: 1200, multiplier: 1.5 },
+      walnut: { base: 1500, multiplier: 1.8 },
+      oak: { base: 1000, multiplier: 1.2 },
+      mahogany: { base: 1100, multiplier: 1.3 }
+    };
+
+    function calculateFabricationCost() {
+      const type = document.getElementById('est-type').value;
+      const material = document.getElementById('est-material').value;
+      const width = parseFloat(document.getElementById('est-width').value) || 0;
+      const height = parseFloat(document.getElementById('est-height').value) || 0;
+      const complexity = parseFloat(document.getElementById('est-complexity').value) || 0;
+
+      // Update Complexity label text
+      document.getElementById('complexity-pct').textContent = `${complexity}% Complexity`;
+
+      // Rates
+      const rates = pricingRates[material] || { base: 1000, multiplier: 1.2 };
+      
+      // Calculate volumes
+      const volumeFeet = width * height;
+      
+      // Calculations
+      const baseWoodValue = Math.round(rates.base * 8 * volumeFeet);
+      const dimensionPremium = Math.round(volumeFeet * 400 * rates.multiplier);
+      const hardwarePremium = Math.round((baseWoodValue + dimensionPremium) * (complexity / 100));
+      const deliveryFitting = 5000;
+
+      const totalCost = baseWoodValue + dimensionPremium + hardwarePremium + deliveryFitting;
+
+      // Update display labels
+      document.getElementById('invoice-base').textContent = `₹ ${baseWoodValue.toLocaleString('en-IN')}/-`;
+      document.getElementById('invoice-dim-premium').textContent = `₹ ${dimensionPremium.toLocaleString('en-IN')}/-`;
+      document.getElementById('invoice-comp-premium').textContent = `₹ ${hardwarePremium.toLocaleString('en-IN')}/-`;
+      document.getElementById('invoice-delivery').textContent = `₹ ${deliveryFitting.toLocaleString('en-IN')}/-`;
+      document.getElementById('invoice-total').textContent = `₹ ${totalCost.toLocaleString('en-IN')}/-`;
+    }
+
+    // Initialize Estimator Calculations on load
+    calculateFabricationCost();
+
+
+    // ============================================
+    // DYNAMIC EXPERIMENT 3: PORTAL TICKETS LOOKUP
+    // ============================================
+    const preloadedTickets = {
+      "BI-9081": {
+        title: "Bespoke Teakwood Dining Slab",
+        progress: 80,
+        milestones: [
+          { done: true, label: "Raw Burmese Teak Specimen Sourced & Audited", desc: "Completed June 04, 2026 — Verified sustainable density lot" },
+          { done: true, label: "Joinery & Structural Slab Assembly Carpentry", desc: "Completed June 18, 2026 — Slab moisture alignment check passed" },
+          { done: false, active: true, label: "Premium Grain Matte Varnish Lacquering", desc: "Active Stage — Coat 2 of 3 curing in temperature humidity box" }
+        ]
+      },
+      "BI-1120": {
+        title: "Premium White Oak Wardrobe System",
+        progress: 35,
+        milestones: [
+          { done: true, label: "Eco White Oak Specimen Sourced & Cut", desc: "Completed June 15, 2026 — Wood moisture certified under 9%" },
+          { done: false, active: true, label: "Structure Framework Joinery & Rails Fitting", desc: "Active Stage — Cabinet backing being framed by master joiners" },
+          { done: false, active: false, label: "Satin Varnish Sanding & Final Lacquer", desc: "Pending Stage — Sanding scheduled after cabinetry frame sign-off" }
+        ]
+      },
+      "BI-5044": {
+        title: "Luxury Modular Walnut Kitchen Grid",
+        progress: 100,
+        milestones: [
+          { done: true, label: "Premium Walnut Specimen Lot Inspected & Cut", desc: "Completed May 10, 2026" },
+          { done: true, label: "Hinge Alignments & Soft-Close Hardware Fitting", desc: "Completed May 25, 2026 — 45-point action load test passed" },
+          { done: true, label: "High-Gloss Varnish Polishing & Fitting", desc: "Completed June 12, 2026 — Showroom installation finished in Bandra" }
+        ]
+      }
+    };
+
+    function lookupClientTicket() {
+      const inputVal = document.getElementById('client-ticket-id').value.toUpperCase().trim();
+      const ticket = preloadedTickets[inputVal];
+
+      const resultBox = document.getElementById('ticket-result-box');
+
+      if (!ticket) {
+        resultBox.innerHTML = `
+          <div class="text-center py-6 space-y-2">
+            <i data-lucide="alert-triangle" class="w-10 h-10 text-rose-500 mx-auto animate-bounce"></i>
+            <h5 class="text-xs font-bold text-white">Ticket ID Not Found</h5>
+            <p class="text-[10px] text-stone-400">Please verify the code or try preloaded codes like BI-9081, BI-1120, or BI-5044.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      // Generate Milestones HTML markup dynamically
+      let milestonesHtml = "";
+      ticket.milestones.forEach(m => {
+        let iconHtml = "";
+        if (m.done) {
+          iconHtml = `<i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>`;
+        } else if (m.active) {
+          iconHtml = `<i data-lucide="hourglass" class="w-4 h-4 text-heritage-gold animate-spin"></i>`;
+        } else {
+          iconHtml = `<i data-lucide="circle" class="w-4 h-4 text-stone-600"></i>`;
+        }
+
+        milestonesHtml += `
+          <div class="flex gap-3 items-start">
+            <div class="mt-0.5">${iconHtml}</div>
+            <div>
+              <span class="font-bold ${m.done ? 'text-white' : m.active ? 'text-heritage-gold' : 'text-stone-500'}">${m.label}</span>
+              <p class="text-[10px] text-stone-400 mt-0.5">${m.desc}</p>
+            </div>
+          </div>
+        `;
+      });
+
+      resultBox.innerHTML = `
+        <div class="flex justify-between items-start border-b border-stone-850 pb-3">
+          <div>
+            <span class="text-[9px] uppercase font-black text-heritage-gold px-2 py-0.5 ${ticket.progress === 100 ? 'bg-emerald-950/40 text-emerald-400 border border-emerald-900/40' : 'bg-amber-950/40 text-heritage-gold border border-amber-900/40'} rounded-full font-bold">
+              ${ticket.progress === 100 ? 'Delivered & Fitted' : 'Active Production'}
+            </span>
+            <h4 class="text-sm font-black text-white mt-1.5" id="ticket-title">${ticket.title}</h4>
+          </div>
+          <span class="text-lg font-black text-heritage-gold font-mono" id="ticket-percentage">${ticket.progress}%</span>
+        </div>
+
+        <!-- Progress Bar wrapper -->
+        <div class="w-full bg-stone-850 h-2 rounded-full overflow-hidden">
+          <div class="bg-heritage-bronze h-full transition-all duration-700" id="ticket-progress-bar" style="width: ${ticket.progress}%;"></div>
+        </div>
+
+        <!-- Milestones Tree -->
+        <div class="space-y-4 pt-2 text-xs" id="ticket-milestones">
+          ${milestonesHtml}
+        </div>
+      `;
+
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

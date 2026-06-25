@@ -6,20 +6,55 @@ Built entirely using **Kotlin**, **Jetpack Compose (Material 3)**, and modern An
 
 ---
 
-## 🌐 Live Web Demo
+## 🌐 Live Web Demo & Preview Options
 
-To preview and interact with the application directly in your web browser, please use the appropriate link below based on your current workspace status:
+To preview and interact with this application directly in your web browser—without installing any local tools or encountering billing paywalls—we have provided several high-fidelity options:
 
-1.  👉 **[Launch Active Development Preview](https://ais-dev-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** 
-    *(Use this link to access the **live streaming emulator** directly connected to your active developer workspace container. This is active during your coding session).*
-2.  👉 **[Launch Shared Web App Build](https://ais-pre-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)**
-    *(This is the production CDN link. Note: If this link returns `Error: Page not found`, it is because you have not yet completed a **Publish / Share** action. To activate it, click the **Share** button in the top-right corner of the Google AI Studio interface to compile your production release!)*
+### 🏆 Option 1: Live Interactive Web Emulator (Highly Recommended for Portfolios!)
+We have built a beautiful, custom **HTML5 & Tailwind CSS Mobile Emulator** directly inside the repository (`index.html` + `vercel.json`). When you host this repository on Vercel, it serves an interactive virtual smartphone showing a mock running instance of the Bhatia Interior Android App:
+*   **Fully Functional Screens**: Tap through all navigation views: **Home**, **Browse**, **Customize**, **Tracker**, and **Contact**.
+*   **Live Customizer & Calculator**: Select different timber species (Teak, Walnut, Oak) or hardware options to see live grain updates and real-time cost estimations calculated in-browser!
+*   **Simulated Real-time Architect Chat**: Type in messages and chat interactively with Lead Architect Sameer Bhatia.
+*   **Showroom Scheduler**: Book live appointments and trigger immediate scheduling confirmation alerts.
 
-> 💡 **Tip:** The easiest way to run and test the app instantly is directly inside the **Streaming Emulator / Preview** panel on the right side of your Google AI Studio workspace!
+#### 🚀 How to deploy to Vercel in 30 Seconds (100% Free):
+If you see a `404: Page Not Found` or want to launch this live on your own custom Vercel subdomain:
+1.  **Direct Github Import**:
+    *   Go to [vercel.com](https://vercel.com) and click **Add New** ➔ **Project**.
+    *   Import your **Bhatia Interior** GitHub repository.
+    *   Vercel will automatically detect the static project root, read the custom `/vercel.json` routing configuration, and deploy the mock emulator within seconds!
+2.  **Using Vercel CLI**:
+    ```bash
+    # Install Vercel CLI globally
+    npm install -g vercel
+
+    # Run deployment from the project root directory
+    vercel
+
+    # Optional: Link to a permanent alias
+    vercel --prod
+    ```
+
+### 📱 Option 2: Live Interactive Emulator (No-Install Web Preview)
+*   👉 **[Launch Active Development Preview](https://ais-dev-c5h5oe24ld2an7gtpenjme-1059087218413.asia-southeast1.run.app)** 
+    *(Accesses the **live streaming emulator** directly connected to your active developer container).*
+*   ⚠️ **If the screen is stuck on "Starting Server":** 
+    1. Simply **refresh your browser page** to wake up the server container.
+    2. Alternatively, open the **Preview** or **Streaming Emulator** panel on the right side of your Google AI Studio workspace and press **Run** or click the refresh button inside the panel. This triggers an incremental build and forces the streaming service to start immediately.
+
+### 📦 Option 3: Download & Share the Native APK (Free Alternative)
+You can share a fully functional native version of this app for free with any reviewer or employer:
+1.  **Generate a Debug APK**: Run `./gradlew assembleDebug` in Android Studio or compile it in this workspace.
+2.  **Download & Share**:
+    *   Navigate to the `.build-outputs/` folder inside this workspace or your local project directory.
+    *   Download the `.apk` file.
+    *   Upload it to a free file-sharing service (e.g., **Google Drive**, **OneDrive**, or directly as a **GitHub Release asset** on your repository).
+    *   Your audience can instantly install and test the actual high-performance app on any physical Android device!
 
 ---
 
 ## 🎨 Design Philosophy & Visual Styling
+
 
 The visual architecture is crafted to replicate the luxury and warmth of a high-end interior design studio:
 *   **Warm Heritage Palette**: Accented with golden-bronze highlights (`#8B7355` / `#9E845A`) and cozy, luxurious background tints to convey premium wooden craftsmanship.
