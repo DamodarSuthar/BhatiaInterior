@@ -80,6 +80,78 @@
       background: #8B7355;
       border-radius: 4px;
     }
+
+    /* Clean transition on theme toggle */
+    body, header, section, div, h1, h2, h3, h4, h5, h6, p, span, a, input, select, button, label {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Light mode definitions: 'Warm Ivory Heritage' style */
+    body.light-mode {
+      background-color: #FAF8F5 !important;
+      color: #2E2722 !important;
+    }
+    body.light-mode .bg-heritage-dark {
+      background-color: #FAF8F5 !important;
+    }
+    body.light-mode .bg-heritage-card {
+      background-color: #FFFFFF !important;
+    }
+    body.light-mode .bg-heritage-card\/90 {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+    }
+    body.light-mode .bg-black,
+    body.light-mode .bg-black\/40,
+    body.light-mode .bg-stone-900,
+    body.light-mode .bg-stone-950,
+    body.light-mode .bg-stone-900\/80,
+    body.light-mode .bg-amber-950\/40,
+    body.light-mode .bg-heritage-card\/80 {
+      background-color: #F5F2EC !important;
+    }
+    body.light-mode .bg-stone-800 {
+      background-color: #ECE7DF !important;
+    }
+    body.light-mode .text-white,
+    body.light-mode .text-stone-100,
+    body.light-mode .text-stone-200,
+    body.light-mode .text-stone-300 {
+      color: #2E2722 !important;
+    }
+    body.light-mode .text-stone-400 {
+      color: #6E645B !important;
+    }
+    body.light-mode .text-stone-500 {
+      color: #8C8074 !important;
+    }
+    body.light-mode .border-stone-800,
+    body.light-mode .border-stone-850,
+    body.light-mode .border-stone-900,
+    body.light-mode .border-stone-950 {
+      border-color: #E2DDD5 !important;
+    }
+    body.light-mode .border-heritage-accent {
+      border-color: #9E845A !important;
+    }
+    body.light-mode .bg-heritage-bronze {
+      background-color: #9E845A !important;
+    }
+    body.light-mode .hover\:bg-stone-800:hover {
+      background-color: #ECE7DF !important;
+    }
+    body.light-mode .hover\:bg-stone-700:hover {
+      background-color: #E2DDD5 !important;
+    }
+    body.light-mode input,
+    body.light-mode select,
+    body.light-mode textarea {
+      background-color: #FFFFFF !important;
+      color: #2E2722 !important;
+      border-color: #E2DDD5 !important;
+    }
+    body.light-mode ::placeholder {
+      color: #8C8074 !important;
+    }
   </style>
 </head>
 <body class="bg-heritage-dark text-stone-100 min-h-screen flex flex-col selection:bg-amber-900 selection:text-amber-100">
@@ -103,6 +175,9 @@
         <a href="#client-portal" class="hover:text-heritage-gold transition">Client Portal</a>
       </nav>
       <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()" class="p-2.5 bg-stone-800 text-heritage-gold hover:text-white rounded-full border border-stone-850 hover:border-heritage-accent/40 transition flex items-center justify-center shadow-md cursor-pointer" title="Toggle Light/Dark Theme">
+          <i data-lucide="sun" class="w-4 h-4" id="theme-toggle-icon"></i>
+        </button>
         <a href="#downloads" class="px-4 py-2 text-xs font-semibold bg-heritage-bronze text-white rounded-full hover:bg-amber-800 transition shadow">
           Download APK
         </a>
@@ -260,36 +335,59 @@
 
             <!-- VIEW 2: BROWSE CATALOG SCREEN -->
             <div id="screen-browse" class="hidden space-y-4">
-              <div class="flex items-center gap-2 bg-heritage-card px-3 py-2 rounded-xl border border-stone-850">
-                <i data-lucide="search" class="w-4 h-4 text-stone-400"></i>
-                <input type="text" placeholder="Search architectural designs..." class="bg-transparent text-xs text-white focus:outline-none w-full placeholder-stone-500">
+              <!-- Browse Main View -->
+              <div id="browse-main-view" class="space-y-4">
+                <div class="flex items-center gap-2 bg-heritage-card px-3 py-2 rounded-xl border border-stone-850">
+                  <i data-lucide="search" class="w-4 h-4 text-stone-400"></i>
+                  <input type="text" id="catalog-search-input" oninput="filterCatalogCards()" placeholder="Search architectural designs..." class="bg-transparent text-xs text-white focus:outline-none w-full placeholder-stone-500">
+                </div>
+
+                <div class="space-y-3">
+                  <h4 class="text-[10px] font-bold uppercase tracking-wider text-heritage-gold">Premium Architectural Catalogs</h4>
+                  
+                  <!-- Catalog Categories Grid -->
+                  <div class="grid grid-cols-2 gap-3" id="catalog-grid-container">
+                    <div onclick="openCatalogDetail('wardrobes')" class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 hover:border-heritage-accent/50 active:scale-[0.98] transition cursor-pointer space-y-2">
+                      <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Wardrobe">
+                      <h5 class="text-[10px] font-bold text-white">Bespoke Wardrobes</h5>
+                      <span class="text-[9px] text-heritage-gold">14 Formats Available</span>
+                    </div>
+                    <div onclick="openCatalogDetail('kitchens')" class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 hover:border-heritage-accent/50 active:scale-[0.98] transition cursor-pointer space-y-2">
+                      <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Kitchen">
+                      <h5 class="text-[10px] font-bold text-white">Modular Kitchens</h5>
+                      <span class="text-[9px] text-heritage-gold">22 Design Schematics</span>
+                    </div>
+                    <div onclick="openCatalogDetail('beds')" class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 hover:border-heritage-accent/50 active:scale-[0.98] transition cursor-pointer space-y-2">
+                      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Beds">
+                      <h5 class="text-[10px] font-bold text-white">Poster Wooden Beds</h5>
+                      <span class="text-[9px] text-heritage-gold">8 Configurations</span>
+                    </div>
+                    <div onclick="openCatalogDetail('dens')" class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 hover:border-heritage-accent/50 active:scale-[0.98] transition cursor-pointer space-y-2">
+                      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Study">
+                      <h5 class="text-[10px] font-bold text-white">Classic Office Dens</h5>
+                      <span class="text-[9px] text-heritage-gold">11 Blueprints</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="space-y-3">
-                <h4 class="text-[10px] font-bold uppercase tracking-wider text-heritage-gold">Premium Architectural Catalogs</h4>
+              <!-- Catalog Detail View -->
+              <div id="browse-detail-view" class="hidden space-y-3">
+                <div class="flex items-center justify-between border-b border-stone-850 pb-2">
+                  <button onclick="closeCatalogDetail()" class="flex items-center gap-1 text-[10px] text-heritage-gold font-bold hover:text-white transition">
+                    <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i> Back to Catalogs
+                  </button>
+                  <span class="text-[8px] bg-heritage-bronze/30 text-heritage-gold font-bold px-2 py-0.5 rounded-full" id="catalog-count-badge">3 Designs</span>
+                </div>
                 
-                <!-- Catalog Categories Grid -->
-                <div class="grid grid-cols-2 gap-3">
-                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
-                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Wardrobe">
-                    <h5 class="text-[10px] font-bold text-white">Bespoke Wardrobes</h5>
-                    <span class="text-[9px] text-heritage-gold">14 Formats Available</span>
-                  </div>
-                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Kitchen">
-                    <h5 class="text-[10px] font-bold text-white">Modular Kitchens</h5>
-                    <span class="text-[9px] text-heritage-gold">22 Design Schematics</span>
-                  </div>
-                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
-                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Beds">
-                    <h5 class="text-[10px] font-bold text-white">Poster Wooden Beds</h5>
-                    <span class="text-[9px] text-heritage-gold">8 Configurations</span>
-                  </div>
-                  <div class="p-2.5 bg-heritage-card rounded-xl border border-stone-850 space-y-2">
-                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=300&q=80" class="w-full h-20 object-cover rounded-lg" alt="Study">
-                    <h5 class="text-[10px] font-bold text-white">Classic Office Dens</h5>
-                    <span class="text-[9px] text-heritage-gold">11 Blueprints</span>
-                  </div>
+                <div class="space-y-0.5">
+                  <h4 class="text-xs font-black text-white" id="catalog-detail-title">Bespoke Wardrobes</h4>
+                  <p class="text-[9px] text-stone-400" id="catalog-detail-desc font-medium">Premium interior storage systems & configurations.</p>
+                </div>
+
+                <!-- Dynamic list of designs inside catalog -->
+                <div class="space-y-2.5 max-h-[300px] overflow-y-auto pr-1" id="catalog-items-list">
+                  <!-- JS populated cards -->
                 </div>
               </div>
             </div>
@@ -1226,6 +1324,191 @@
         </div>
       `;
 
+      lucide.createIcons();
+    }
+
+    // ============================================
+    // DYNAMIC EXPERIMENT 4: PREMIUM CATALOG INTERACTIVITY
+    // ============================================
+    const catalogData = {
+      wardrobes: {
+        title: "Bespoke Wardrobes",
+        desc: "Handcrafted interior storage solutions with customizable timber and hardware configurations.",
+        items: [
+          {
+            title: "European Walk-In Wardrobe",
+            specs: "14 Formats • Custom LED Profile",
+            desc: "Designed with integrated LED shelf strips, modular glass dividers, and clear high-contrast sliding metal profiles.",
+            img: "https://images.unsplash.com/photo-1558882224-cca166733360?auto=format&fit=crop&w=300&q=80",
+            price: "₹1,85,000"
+          },
+          {
+            title: "Heritage Classical Hinged",
+            specs: "Solid Timber • Brass Trim",
+            desc: "Constructed with solid wood doors, luxury heavy-duty brass locks, and premium velvet-lined drawer organizers.",
+            img: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=300&q=80",
+            price: "₹2,10,000"
+          },
+          {
+            title: "Minimalist Handleless Sliding",
+            specs: "Premium Lacquer • Soft-Close",
+            desc: "Satin lacquer finishes with integrated hand grips, silent gliding mechanisms, and overhead loft cabinets.",
+            img: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=300&q=80",
+            price: "₹1,45,000"
+          }
+        ]
+      },
+      kitchens: {
+        title: "Modular Kitchens",
+        desc: "High-efficiency ergonomic kitchen blueprints optimized for Mumbai smart residences.",
+        items: [
+          {
+            title: "Island Quartz & Walnut Kitchen",
+            specs: "Central Island • Dual Sink",
+            desc: "Features a spacious central island countertop with integrated storage drawers and hidden pull-out spice racks.",
+            img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=300&q=80",
+            price: "₹4,20,000"
+          },
+          {
+            title: "L-Shape Premium Acrylic",
+            specs: "Glossy Panels • Hydraulic Lift",
+            desc: "Designed with glossy scratch-resistant acrylic panels, soft-close hydraulic dampers, and modular basket racks.",
+            img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=300&q=80",
+            price: "₹3,15,000"
+          },
+          {
+            title: "U-Shape Handleless Minimalist",
+            specs: "Slate Gray Matte • Built-in Pantry",
+            desc: "Features seamless push-to-open doors, under-cabinet focus lighting, and customized tall pantry organizers.",
+            img: "https://images.unsplash.com/photo-1565538810844-1e119fa11176?auto=format&fit=crop&w=300&q=80",
+            price: "₹3,90,000"
+          }
+        ]
+      },
+      beds: {
+        title: "Poster Wooden Beds",
+        desc: "Classic and contemporary heavy-timber sleeping systems built to elevate bedroom geometry.",
+        items: [
+          {
+            title: "Royal Four-Poster Teak Bed",
+            specs: "Premium Teak • Hand Carved",
+            desc: "Tall solid-timber support pillars, classic crown moldings, and custom beeswax-polished headboard frames.",
+            img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=300&q=80",
+            price: "₹1,65,000"
+          },
+          {
+            title: "Low-Slung Japandi Platform",
+            specs: "Sleek Oak • Floating Design",
+            desc: "Features an extra-wide horizontal wooden headboard ledge, low posture frame, and built-in side nightstands.",
+            img: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=300&q=80",
+            price: "₹1,25,000"
+          },
+          {
+            title: "Monastery High Headboard Bed",
+            specs: "Rustic Timber • Solid Frame",
+            desc: "High headboard design crafted from selected deep-grained lumber with subtle recessed ambient night lighting.",
+            img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=300&q=80",
+            price: "₹1,40,000"
+          }
+        ]
+      },
+      dens: {
+        title: "Classic Office Dens",
+        desc: "Inspiring dedicated work-from-home workspaces, study library layouts, and executive desk environments.",
+        items: [
+          {
+            title: "Walnut Executive Desk Set",
+            specs: "Pure Walnut • Leather Inlay",
+            desc: "Includes a massive solid-timber executive table with built-in hidden power strip channels and premium soft-closing drawers.",
+            img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=300&q=80",
+            price: "₹95,000"
+          },
+          {
+            title: "Floor-to-Ceiling Library Alcove",
+            specs: "Adjustable Shelving • Pine/Oak",
+            desc: "Space-optimized bookshelves with adjustable heavy-duty brackets, a sliding ladder rail, and an integrated reading corner.",
+            img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=300&q=80",
+            price: "₹2,30,000"
+          },
+          {
+            title: "Contemporary Minimalist Station",
+            specs: "Slim Metal legs • Wood Top",
+            desc: "Designed for compact apartments, utilizing a floating table top, modern matte-black support legs, and modular pegboards.",
+            img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=300&q=80",
+            price: "₹75,000"
+          }
+        ]
+      }
+    };
+
+    function openCatalogDetail(catalogKey) {
+      const catalog = catalogData[catalogKey];
+      if (!catalog) return;
+
+      document.getElementById('catalog-detail-title').textContent = catalog.title;
+      document.getElementById('catalog-detail-desc').textContent = catalog.desc;
+      document.getElementById('catalog-count-badge').textContent = `${catalog.items.length} Designs`;
+
+      const listContainer = document.getElementById('catalog-items-list');
+      listContainer.innerHTML = "";
+
+      catalog.items.forEach(item => {
+        const cardHtml = `
+          <div class="bg-heritage-card p-2.5 rounded-xl border border-stone-850 flex gap-3 items-start hover:border-heritage-accent/20 transition">
+            <img src="${item.img}" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" alt="${item.title}">
+            <div class="flex-1 space-y-1">
+              <div class="flex items-start justify-between gap-1">
+                <h5 class="text-[10px] font-bold text-white leading-tight">${item.title}</h5>
+                <span class="text-[8px] font-mono text-heritage-gold font-bold whitespace-nowrap">${item.price}</span>
+              </div>
+              <span class="block text-[7.5px] text-heritage-gold font-semibold uppercase tracking-wider">${item.specs}</span>
+              <p class="text-[9px] text-stone-400 leading-snug mt-0.5">${item.desc}</p>
+            </div>
+          </div>
+        `;
+        listContainer.insertAdjacentHTML('beforeend', cardHtml);
+      });
+
+      // Show detail view, hide main view
+      document.getElementById('browse-main-view').classList.add('hidden');
+      document.getElementById('browse-detail-view').classList.remove('hidden');
+      
+      lucide.createIcons();
+    }
+
+    function closeCatalogDetail() {
+      document.getElementById('browse-detail-view').classList.add('hidden');
+      document.getElementById('browse-main-view').classList.remove('hidden');
+    }
+
+    function filterCatalogCards() {
+      const query = document.getElementById('catalog-search-input').value.toLowerCase().trim();
+      const gridItems = document.getElementById('catalog-grid-container').children;
+
+      for (let item of gridItems) {
+        const title = item.querySelector('h5').textContent.toLowerCase();
+        if (title.includes(query)) {
+          item.classList.remove('hidden');
+          item.classList.add('flex');
+        } else {
+          item.classList.add('hidden');
+          item.classList.remove('flex');
+        }
+      }
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-toggle-icon');
+      
+      body.classList.toggle('light-mode');
+      
+      if (body.classList.contains('light-mode')) {
+        themeIcon.setAttribute('data-lucide', 'moon');
+      } else {
+        themeIcon.setAttribute('data-lucide', 'sun');
+      }
+      
       lucide.createIcons();
     }
   </script>
