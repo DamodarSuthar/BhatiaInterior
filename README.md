@@ -92,59 +92,6 @@ The visual architecture is crafted to replicate the luxury and warmth of a high-
 
 ---
 
-## 📸 Screen Previews & App Layouts
-
-Due to the image generation system's daily API quota limit during automated workspace builds, pre-generated mockup graphics could not be written directly into the project repository. However, you can instantly add your own screenshots by following this quick 3-step guide!
-
-### 🛠️ How to Add Your Screenshots
-1.  **Launch the App**: Open the **Active Development Preview** link or the **Streaming Emulator** panel inside the Google AI Studio workspace.
-2.  **Take Screen Grabs**: Capture a screenshot of the main screens (**Home, Browse, Customize, Tracker, Contact**).
-3.  **Place in Repository**: Create a folder named `art/` in the root of your repository, place the images inside (e.g., `home.png`, `customize.png`), and reference them in this markdown file.
-
----
-
-### 📱 Visual Architecture & Wireframe Layouts
-
-To help you visualize the premium Material 3 UI design constructed for **Bhatia Interior**, here is the structural layout of the major screens:
-
-```
-┌──────────────────────────────────────┐  ┌──────────────────────────────────────┐
-│  BHATIA INTERIOR - PREMIUM HOME      │  │  BESPOKE CUSTOMIZER (MATERIAL 3)     │
-├──────────────────────────────────────┤  ├──────────────────────────────────────┤
-│  [Hero Banner Carousel]             │  │  [3D-Style Living Room Scene]        │
-│  "Discover Curated Spaces"           │  │  "Turnkey Wooden Fabrication"        │
-│                                      │  │                                      │
-│  [Timber Selector Swatches]          │  │  [ Timber Species Selector ]         │
-│  Teak   •   Walnut   •   Oak         │  │  (•) Burmese Teak   ( ) Walnut       │
-│                                      │  │                                      │
-│  [Architectural Design Articles]     │  │  [ Hardware / Handles Selection ]    │
-│  - Space Optimization in Mumbai      │  │  - Brass Knobs    - Matte Black Rail │
-│  - Contrast Styling & Highlights     │  │                                      │
-│                                      │  │  [Estimated Price: ₹ 1,45,000/-]     │
-│  [Quick Booking Floating Button]     │  │  [Add to Moodboard]   [Book Design]  │
-└──────────────────────────────────────┘  └──────────────────────────────────────┘
-             (Home Screen)                           (Customize Screen)
-
-┌──────────────────────────────────────┐  ┌──────────────────────────────────────┐
-│  CLIENT PORTAL & PROGRESS TRACKER    │  │  SHOWROOM LOCATOR & BOOKING          │
-├──────────────────────────────────────┤  ├──────────────────────────────────────┤
-│  [Milestone Progress Card]           │  │  [Interactive Vector Map]            │
-│  Active Project: Modular Wardrobe    │  │  "Linking Road, Bandra West, Mumbai" │
-│  Progress: 75%                       │  │                                      │
-│  ■■■■■■■■■■■■■■■■■■■■■■■■■■■□□□□□    │  │  [Designer Consultation Scheduler]   │
-│                                      │  │  - Select Preferred Service          │
-│  [Architect Chat Support Zone]       │  │  - Enter Target Booking Date         │
-│  "Send site photos / coordinate"     │  │  - Full Name / Contact Number        │
-│  [Type message...]            [Send] │  │                                      │
-│                                      │  │  [ Submit Booking Reservation ]      │
-│  [Submit Showroom Visit Review]      │  │                                      │
-│  ★ ★ ★ ★ ☆  "Write comments here..."  │  │  [Showroom Working Hours Info Card]  │
-└──────────────────────────────────────┘  └──────────────────────────────────────┘
-            (Tracker Screen)                         (Contact Screen)
-```
-
----
-
 ## 🛠️ Tech Stack & Architecture
 
 *   **Language**: 100% Kotlin with modern Coroutines and StateFlow management.
