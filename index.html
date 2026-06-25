@@ -91,66 +91,87 @@
       background-color: #FAF8F5 !important;
       color: #2E2722 !important;
     }
-    body.light-mode .bg-heritage-dark {
+    body.light-mode .bg-heritage-dark:not(.phone-emulator, .phone-emulator *) {
       background-color: #FAF8F5 !important;
     }
-    body.light-mode .bg-heritage-card {
+    body.light-mode .bg-heritage-card:not(.phone-emulator, .phone-emulator *) {
       background-color: #FFFFFF !important;
     }
-    body.light-mode .bg-heritage-card\/90 {
+    body.light-mode .bg-heritage-card\/90:not(.phone-emulator, .phone-emulator *) {
       background-color: rgba(255, 255, 255, 0.9) !important;
     }
-    body.light-mode .bg-black,
-    body.light-mode .bg-black\/40,
-    body.light-mode .bg-stone-900,
-    body.light-mode .bg-stone-950,
-    body.light-mode .bg-stone-900\/80,
-    body.light-mode .bg-amber-950\/40,
-    body.light-mode .bg-heritage-card\/80 {
+    body.light-mode .bg-black:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .bg-black\/40:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .bg-stone-900:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .bg-stone-950:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .bg-stone-900\/80:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .bg-amber-950\/40:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .bg-heritage-card\/80:not(.phone-emulator, .phone-emulator *) {
       background-color: #F5F2EC !important;
     }
-    body.light-mode .bg-stone-800 {
+    body.light-mode .bg-stone-800:not(.phone-emulator, .phone-emulator *) {
       background-color: #ECE7DF !important;
     }
-    body.light-mode .text-white,
-    body.light-mode .text-stone-100,
-    body.light-mode .text-stone-200,
-    body.light-mode .text-stone-300 {
+    body.light-mode .text-white:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .text-stone-100:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .text-stone-200:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .text-stone-300:not(.phone-emulator, .phone-emulator *) {
       color: #2E2722 !important;
     }
-    body.light-mode .text-stone-400 {
+    body.light-mode .text-stone-400:not(.phone-emulator, .phone-emulator *) {
       color: #6E645B !important;
     }
-    body.light-mode .text-stone-500 {
+    body.light-mode .text-stone-500:not(.phone-emulator, .phone-emulator *) {
       color: #8C8074 !important;
     }
-    body.light-mode .border-stone-800,
-    body.light-mode .border-stone-850,
-    body.light-mode .border-stone-900,
-    body.light-mode .border-stone-950 {
+    body.light-mode .border-stone-800:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .border-stone-850:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .border-stone-900:not(.phone-emulator, .phone-emulator *),
+    body.light-mode .border-stone-950:not(.phone-emulator, .phone-emulator *) {
       border-color: #E2DDD5 !important;
     }
-    body.light-mode .border-heritage-accent {
+    body.light-mode .border-heritage-accent:not(.phone-emulator, .phone-emulator *) {
       border-color: #9E845A !important;
     }
-    body.light-mode .bg-heritage-bronze {
+    body.light-mode .bg-heritage-bronze:not(.phone-emulator, .phone-emulator *) {
       background-color: #9E845A !important;
     }
-    body.light-mode .hover\:bg-stone-800:hover {
+    body.light-mode .hover\:bg-stone-800:hover:not(.phone-emulator, .phone-emulator *) {
       background-color: #ECE7DF !important;
     }
-    body.light-mode .hover\:bg-stone-700:hover {
+    body.light-mode .hover\:bg-stone-700:hover:not(.phone-emulator, .phone-emulator *) {
       background-color: #E2DDD5 !important;
     }
-    body.light-mode input,
-    body.light-mode select,
-    body.light-mode textarea {
+    body.light-mode input:not(.phone-emulator, .phone-emulator *),
+    body.light-mode select:not(.phone-emulator, .phone-emulator *),
+    body.light-mode textarea:not(.phone-emulator, .phone-emulator *) {
       background-color: #FFFFFF !important;
       color: #2E2722 !important;
       border-color: #E2DDD5 !important;
     }
     body.light-mode ::placeholder {
       color: #8C8074 !important;
+    }
+
+    /* Beautiful glassmorphism box style on wood sample details for light mode */
+    body.light-mode #lab-specimen-card {
+      background-color: rgba(255, 255, 255, 0.85) !important;
+      border-color: rgba(226, 221, 213, 0.8) !important;
+    }
+    body.light-mode #lab-specimen-title {
+      color: #2E2722 !important;
+    }
+    body.light-mode #lab-specimen-desc {
+      color: #5C524A !important;
+    }
+    body.light-mode #lab-specimen-card .border-stone-800 {
+      border-color: #E2DDD5 !important;
+    }
+    body.light-mode #lab-specimen-card .text-stone-400 {
+      color: #6E645B !important;
+    }
+    body.light-mode #lab-specimen-card .text-stone-300 {
+      color: #4A3E3D !important;
     }
   </style>
 </head>
@@ -240,7 +261,7 @@
     <div class="lg:col-span-7 flex flex-col items-center justify-center">
       <span class="text-xs text-heritage-gold font-semibold uppercase tracking-widest mb-3 animate-pulse">👇 Tap buttons inside screen to interact!</span>
       
-      <div class="relative w-full max-w-[380px] h-[740px] bg-black rounded-[48px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] border-[10px] border-stone-800 overflow-hidden flex flex-col">
+      <div class="phone-emulator relative w-full max-w-[380px] h-[740px] bg-black rounded-[48px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] border-[10px] border-stone-800 overflow-hidden flex flex-col">
         <!-- Phone Notch -->
         <div class="phone-notch"></div>
 
@@ -659,7 +680,7 @@
             <div class="absolute inset-0 pointer-events-none transition-all duration-300" id="lab-sheen-overlay" style="background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.15) 100%);"></div>
 
             <!-- Specimen Title Details tag -->
-            <div class="relative z-10 bg-black/80 backdrop-blur-md p-4 rounded-2xl border border-stone-800/80 max-w-md">
+            <div id="lab-specimen-card" class="relative z-10 bg-black/80 backdrop-blur-md p-4 rounded-2xl border border-stone-800/80 max-w-md">
               <span class="text-[9px] uppercase font-black text-heritage-gold tracking-widest block mb-0.5">Physical Hardwood Sample</span>
               <h4 class="text-base font-black text-white" id="lab-specimen-title">Burmese Teak (Tectona grandis)</h4>
               <p class="text-[11px] text-stone-300 mt-1 leading-relaxed" id="lab-specimen-desc">
